@@ -16,9 +16,9 @@ function Nav() {
     },
   ];
 
-  const handleClick = () => {
-    console.log("click handled");
-  };
+  function categorySelected(name) {
+    console.log(`${name} clicked`);
+  }
 
   return (
     <header data-testid="header" className="flex-row px-1">
@@ -34,20 +34,16 @@ function Nav() {
       <nav>
         <ul className="flex-row">
           <li className="mx-2">
-            <a href="#about" onClick={() => handleClick()}>
+            <a href="#about" onClick={() => categorySelected()}>
               About me
             </a>
           </li>
           <li className={"mx-2"}>
-            <span onClick={() => handleClick()}>Contact</span>
+            <span onClick={() => categorySelected()}>Contact</span>
           </li>
           {categories.map((category) => (
             <li className="mx-1" key={category.name}>
-              <span
-                onClick={() => {
-                  handleClick();
-                }}
-              >
+              <span onClick={() => categorySelected(category.name)}>
                 {capitalizeFirstLetter(category.name)}
               </span>
             </li>
