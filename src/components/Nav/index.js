@@ -50,8 +50,8 @@ function Nav() {
   );
 }
 
-function categorySelected(name) {
-  console.log(`${name} clicked`)
-}
+// function categorySelected(name) {
+//   console.log(`${name} clicked`)
+// }
 
 export default Nav;
